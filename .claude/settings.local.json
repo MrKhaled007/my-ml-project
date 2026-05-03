@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python.exe -m src.features.engineering)",
+      "Bash(.venv/Scripts/python.exe -m src.features.run_features)"
+    ]
+  }
+}

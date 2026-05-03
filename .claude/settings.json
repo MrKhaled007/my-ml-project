@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m src.models.baseline)",
+      "Bash(python -c \"import xgboost, sklearn; print\\('xgb', xgboost.__version__\\); print\\('sklearn', sklearn.__version__\\)\")"
+    ]
+  }
+}

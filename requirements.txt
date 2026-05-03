@@ -6,6 +6,7 @@ fastapi
 uvicorn
 streamlit
 mlflow
+optuna
 great-expectations
 pytest
 plotly
