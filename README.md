@@ -136,7 +136,8 @@ python -m venv .venv
 # source .venv/bin/activate      # macOS/Linux
 
 # 3. Install dependencies + register the src package
-pip install -r requirements.txt
+pip install -r requirements.txt          # runtime deps (app + tests)
+pip install -r requirements-train.txt    # add training deps (mlflow, optuna, lightgbm, great-expectations)
 pip install -e .
 
 # 4. Download the raw dataset

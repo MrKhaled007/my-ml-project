@@ -1,0 +1,8 @@
+# Training-only deps. Install on top of requirements.txt to reproduce
+# the model bake-off, hyperparameter tuning, and MLflow experiment runs:
+#   pip install -r requirements.txt -r requirements-train.txt
+-r requirements.txt
+lightgbm
+optuna
+mlflow
+great-expectations

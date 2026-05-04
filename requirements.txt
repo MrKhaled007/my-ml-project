@@ -1,12 +1,10 @@
-pandas
-scikit-learn
-xgboost
-lightgbm
-fastapi
-uvicorn
+# Runtime deps for the Streamlit app and the test suite.
+# Training/experiment-tracking deps live in requirements-train.txt.
 streamlit
-mlflow
-optuna
-great-expectations
-pytest
 plotly
+pandas
+numpy
+scikit-learn
+joblib
+xgboost
+pytest
