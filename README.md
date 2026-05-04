@@ -1,5 +1,7 @@
 # my-ml-project
 
+[![CI](https://github.com/MrKhaled007/my-ml-project/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/MrKhaled007/my-ml-project/actions/workflows/ci.yml)
+
 Credit card fraud detection on anonymized transaction data.
 
 ## Exploratory Data Analysis
