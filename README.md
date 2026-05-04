@@ -6,7 +6,7 @@
 
 End-to-end binary classifier that flags fraudulent card transactions on a 283K-row dataset with a 599:1 class imbalance, served behind a Streamlit UI and packaged for one-command Docker deployment.
 
-**🚀 Live demo:** _coming soon — placeholder URL_ → `https://my-ml-project.streamlit.app/`
+**🚀 Live demo:** <https://my-ml-project-59v2ycuv9qhdkvuxqrhcac.streamlit.app/>
 
 ---
 
