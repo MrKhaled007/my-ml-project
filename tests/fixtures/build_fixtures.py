@@ -6,18 +6,16 @@ Run after the cleaned-data schema or feature-engineering output changes:
 Outputs (committed to the repo so CI can run pytest without raw data):
     cleaned_sample.csv   stratified subset of cleaned data
     features_sample.csv  result of create_features on the subset
-    model_sample.pkl     LogisticRegression trained on those features
+
+The model is trained fresh inside the test fixture rather than committed,
+to avoid cross-sklearn-version pickle incompatibilities between dev and CI.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-import joblib
-from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 
 from src.data.loader import load_csv
 from src.features.engineering import create_features
@@ -48,16 +46,6 @@ def main() -> None:
     enriched = create_features(sample)
     enriched.to_csv(FIXTURES_DIR / "features_sample.csv", index=False)
     print(f"  features_sample.csv: {enriched.shape}")
-
-    X = enriched.drop(columns=[TARGET])
-    y = enriched[TARGET]
-    model = Pipeline([
-        ("scaler", StandardScaler()),
-        ("lr", LogisticRegression(max_iter=2000, random_state=RANDOM_STATE)),
-    ])
-    model.fit(X, y)
-    joblib.dump(model, FIXTURES_DIR / "model_sample.pkl")
-    print(f"  model_sample.pkl: {type(model).__name__} on {X.shape[1]} features")
 
 
 if __name__ == "__main__":
