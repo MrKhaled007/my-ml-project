@@ -226,7 +226,6 @@ def _synth_results() -> dict:
     """Plausible-but-illustrative metrics so every page renders without real artifacts."""
     n_rows, n_test = 280_000, 56_000
     n_fraud = 470
-    n_fraud_test = 95
 
     models = {
         "baseline": {
