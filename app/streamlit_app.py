@@ -744,7 +744,7 @@ def page_results(results: dict) -> None:
     st.dataframe(
         table.style
             .format({c: "{:.4f}" for c in table.columns if c != "Model"})
-            .background_gradient(subset=["ROC-AUC", "PR-AUC", "F1"], cmap="Blues"),
+            .bar(subset=["ROC-AUC", "PR-AUC", "F1"], color="#4F8BF9", vmin=0.0, vmax=1.0),
         width="stretch",
         hide_index=True,
     )
